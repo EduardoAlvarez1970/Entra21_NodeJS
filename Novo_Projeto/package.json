@@ -1,0 +1,14 @@
+{
+  "name": "novo_projeto",
+  "version": "1.0.0",
+  "description": "Projeto para o curso de react Entra21",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eduardo alvarez",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
