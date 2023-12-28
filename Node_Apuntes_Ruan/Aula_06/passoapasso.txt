@@ -1,0 +1,12 @@
+1- Iniciar o projeto: npm init -y
+2- Editar package.json incluindo: "type": "module",
+3- Instalar as dependencias: npm i express pg dotenv
+4- Criar o server.js e pastas controllers e routes
+5- Incluir script de start no package.json: "start": "node --watch server.js"
+6- Importar o express e criar o servidor
+7- Criar e exportar rotas que se conectam com o servidor e os controllers
+8- Criar um arquivo .env para armazenar a string de conexao do pg
+9- Criar e exportar um arquivo para conectar ao banco que será utilizado nos controllers
+10- Trabalhar a lógica das requisições e respostas nos controllers
+
+

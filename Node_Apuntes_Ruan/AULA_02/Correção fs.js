@@ -1,3 +1,9 @@
+const fs = require('fs')
+
+const readlineSync = require('readline-sync')
+
+
+
 // item 1
 const dados = fs.readFileSync("aula.txt", "utf-8")
 console.log(dados)

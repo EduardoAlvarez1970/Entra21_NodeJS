@@ -1,0 +1,3 @@
+Falcon includes 20 oscillators covering a wide range of modern synthesis methods from basic sample playback to more advanced generators like Pluck, Wavetable and IRCAM Multi Granular.
+One of Falcon's greatest strengths is its ability to freely layer oscillators to create elaborate hybrid instruments that capitalize on the unique features of both sample-based and algorithmic sound creation. There are no preset limits on the quantity or type of oscillators you can use, you're limited only by your computers processing power and imagination.\no
+555555555
