@@ -15,7 +15,7 @@ const cadastrarCerveja = async (req, res) => {
     }
 }
 
-const listarCervejas = async (_, res) => {
+const listarCervejas = async (req, res) => {
     try {
         const listaCervejas = await Cerveja.findAll()
         res.status(200).send({ success: true, data: listaCervejas})
@@ -40,6 +40,29 @@ const atualizarCerveja = async (req, res) => {
     }
 }
 
+const listarCervejasPeloId = async (req, res) => {
+    try {
+        const { id } = req.params
+        const cerveja = await Cerveja.findByPk(id)
+        res.status(200).send({ success: true, data: cerveja})
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ success: false, error: 'Erro ao buscar cerveja!!' })
+        }
+}
+
+
+const apagarCerveja = async (req, res) => {
+    try {
+        const { id } = req.params
+        await Cerveja.destroy({ where: { id }})
+        res.status(200).send({ success: true})
+    }  catch (err) {
+        console.log(err)
+        res.status(500).send({ success: false, error: 'Erro ao excluir cerveja' })
+        }
+
+    }
 
 
 
@@ -48,4 +71,5 @@ const atualizarCerveja = async (req, res) => {
 
 
 
-export { listarCervejas, cadastrarCerveja, atualizarCerveja }
+
+export { listarCervejas, cadastrarCerveja, atualizarCerveja, listarCervejasPeloId, apagarCerveja }

@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { listarCervejas, cadastrarCerveja, atualizarCerveja  } from '../controllers/produtos.js'
+import { listarCervejas, cadastrarCerveja, atualizarCerveja, listarCervejasPeloId, apagarCerveja } from '../controllers/produtos.js'
 
 const router = express.Router()
 
