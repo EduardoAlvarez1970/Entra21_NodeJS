@@ -2,12 +2,12 @@ import Cerveja from '../models/Cerveja.js'
 
 const cadastrarCerveja = async (req, res) => {
     try {
-        const {nome, abv, tipo, nacionalidade} = req.body
-        if (!nome || !abv || !tipo || !nacionalidade) {
+        const {id, nome, abv, tipo, nacionalidade} = req.body
+        if (!id, !nome || !abv || !tipo || !nacionalidade) {
             res.status(400).send({message: 'Dados incompletos!!'})
-        }
+        }  // SE USAR 'AUTO INCREMENT' NO MODELS, TIRAR DE AQUI OS id, EU DEIXEI PORQUE QUERO COLOCAR EM ORDEM DO 1 AO 7
 
-        const novaCerveja = {nome, abv, tipo, nacionalidade}
+        const novaCerveja = {id, nome, abv, tipo, nacionalidade}
         const resultado = await Cerveja.create(novaCerveja)
         res.status(201).send({message: 'Cerveja cadastrada com sucesso!!', data: resultado})
     } catch (err) {

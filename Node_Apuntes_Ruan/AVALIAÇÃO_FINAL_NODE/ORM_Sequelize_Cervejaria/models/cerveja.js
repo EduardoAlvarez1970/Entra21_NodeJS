@@ -5,7 +5,7 @@ const Cerveja = sequelize.define('Cerveja', {
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        //autoIncrement: true   OPCÃO !!!
     },
     nome: {
         type: DataTypes.STRING,
