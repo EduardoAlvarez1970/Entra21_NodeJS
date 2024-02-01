@@ -1,0 +1,27 @@
+import sequelize from '../database.js'
+import { DataTypes } from 'sequelize'
+
+const Cerveja = sequelize.define('Cerveja', {
+    id:{
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    nome: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    abv: {
+        type: DataTypes.FLOAT
+    },
+    tipo: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    NACIONALIDADE: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+})
+
+export default Cerveja
