@@ -12,13 +12,14 @@ const Cerveja = sequelize.define('Cerveja', {
         allowNull: false
     },
     abv: {
-        type: DataTypes.FLOAT
+        type: DataTypes.FLOAT,
+        allowNull: false
     },
     tipo: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    NACIONALIDADE: {
+    nacionalidade: {
         type: DataTypes.STRING,
         allowNull: false
     }

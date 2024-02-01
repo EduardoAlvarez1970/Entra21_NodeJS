@@ -1,18 +1,14 @@
 import express from 'express'
 
-import {   } from '../controllers/produtos.js'
+import { cadastrarCerveja  } from '../controllers/produtos.js'
 
 const router = express.Router()
 
-/*
 router.get('/cervejas', listarCervejas)
-router.get('/produtos/:id', listarCervejasPeloId)
-router.post('/produtos', cadastrarCeveja)
-router.put('/produtos/:id', atualizarCeveja)
-router.delete('/produtos/:id', apagarCerveja)
-*/
-
-
+router.get('/cervejas/:id', listarCervejasPeloId)
+router.post('/cervejas', cadastrarCeveja)
+router.put('/cervejas/:id', atualizarCeveja)
+router.delete('/cervejas/:id', apagarCerveja)
 
 
 export default router

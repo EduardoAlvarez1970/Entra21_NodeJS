@@ -6,7 +6,7 @@ import cervejasRouter from './routes/cervejasRoutes.js'
 
 import sequelize  from './database.js'
 try {
-    sequelize.sync()
+    await sequelize.sync()
 } catch(erro) {
     console.log(erro)
 }
