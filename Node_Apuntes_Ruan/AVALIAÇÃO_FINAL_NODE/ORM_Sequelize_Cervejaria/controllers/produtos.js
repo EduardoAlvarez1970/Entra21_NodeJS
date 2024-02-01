@@ -2,12 +2,12 @@ import Cerveja from '../models/Cerveja.js'
 
 const cadastrarCerveja = async (req, res) => {
     try {
-        const {id, nome, abv, tipo, nacionalidade} = req.body
-        if (!id || !nome || !abv || !tipo || !nacionalidade) {
+        const {nome, abv, tipo, nacionalidade} = req.body
+        if (!nome || !abv || !tipo || !nacionalidade) {
             res.status(400).send({message: 'Dados incompletos!!'})
         }
 
-        const novaCerveja = {id, nome, abv, tipo, nacionalidade}
+        const novaCerveja = {nome, abv, tipo, nacionalidade}
         const resultado = await Cerveja.create(novaCerveja)
         res.status(201).send({message: 'Cerveja cadastrada com sucesso!!', data: resultado})
     } catch (err) {
@@ -29,7 +29,7 @@ const atualizarCerveja = async (req, res) => {
     try {
         const id = req.params.id
         const { nome, abv, tipo, nacionalidade } = req.body
-        if (!id || !nome || !abv || !tipo || !nacionalidade) {
+        if (!nome || !abv || !tipo || !nacionalidade) {
             res.status(400).send({message: 'Dados incompletos!!'})
         }
         const cervejaAtualizada = { nome, abv, tipo, nacionalidade }
@@ -56,20 +56,12 @@ const apagarCerveja = async (req, res) => {
     try {
         const { id } = req.params
         await Cerveja.destroy({ where: { id }})
-        res.status(200).send({ success: true})
+        res.status(200).send({ success: true, message: 'Cerveja excluida'})
     }  catch (err) {
         console.log(err)
         res.status(500).send({ success: false, error: 'Erro ao excluir cerveja' })
         }
-
-    }
-
-
-
-
-
-
-
+}
 
 
 export { listarCervejas, cadastrarCerveja, atualizarCerveja, listarCervejasPeloId, apagarCerveja }
